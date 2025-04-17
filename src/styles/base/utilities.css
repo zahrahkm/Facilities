@@ -26,7 +26,7 @@
         @apply flex items-center p-2 pb-0 gap-2 text-form-value border align-middle border-borderDisabledDefault rounded-md flex-none order-1 self-stretch w-full
     }
     .form-container{
-        @apply flex flex-col mx-auto md:px-4 gap-4 max-w-[1200px] self-stretch
+        @apply flex flex-col mx-auto gap-4 max-w-[1200px] self-stretch
     }
     .form-card{
         @apply bg-white p-4 rounded-lg shadow-sm w-full gap-3 flex flex-col
