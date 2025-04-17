@@ -5,7 +5,8 @@ import { Facility } from '../types/facility';
 type FacilityState = {
   facilities: Facility[];
   addFacility: (facility: Omit<Facility, 'id'>) => void;
-  updateFacility:(id:string,facility:Partial<Facility>)=>void;
+  updateFacility: (id: string, facility: Partial<Facility>) => void;
+  deleteFacility: (id: string) => void;
   getFacilityById:(id:string)=>Facility | undefined;
  
 };
@@ -64,6 +65,20 @@ export const useFacilityStore = create<FacilityState>()(
           }
 
           return { facilities: updatedFacilities };
+        });
+      },
+      deleteFacility: (id) => {
+        set((state) => {
+          const facilities = [...state.facilities];
+          const facilityToDelete = facilities.find((f) => f.id === id);
+          const remainingFacilities = facilities.filter((f) => f.id !== id);
+
+          if (facilityToDelete?.isDefault && remainingFacilities.length > 0) {
+            // Make first one default
+            remainingFacilities[0].isDefault = true;
+          }
+
+          return { facilities: remainingFacilities };
         });
       },
       getFacilityById: (id) => {
