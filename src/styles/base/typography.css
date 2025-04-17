@@ -1,5 +1,9 @@
 @layer utilities {
     .text-body-strong {
-    @apply font-semibold text-base leading-normal ;
+    @apply font-semibold font-inter text-base leading-normal ;
+    }
+    
+    .text-neutral{
+        @apply font-semibold font-inter text-sm ;
     }
 }
