@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .header-bar {
+      @apply bg-navbarBackground text-white h-14 flex items-center;
+    }
+    .mobile-header-bar{
+        @apply bg-navbarBackground fixed inset-y-0 right-0 w-64 p-6 z-50 shadow-lg flex flex-col gap-4
+    }
+    .btn-disabled{
+        @apply cursor-not-allowed text-textDefaultSecondary;
+    }
+    .text-body-strong {
+        @apply font-semibold text-base leading-normal ;
+    }
+    .overlay {
+        @apply fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-40;
+    }
+}  
