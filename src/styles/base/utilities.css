@@ -14,6 +14,9 @@
     .overlay {
         @apply fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-40;
     }
+    .card{
+        @apply bg-white rounded-lg overflow-hidden p-3 w-full hover:shadow-lg transition-shadow
+    }
 
     /* form */
     .input-base {
@@ -31,5 +34,25 @@
     .form-card{
         @apply bg-white p-4 rounded-lg shadow-sm w-full gap-3 flex flex-col
     }
+
+    /* badge */
+    .base-badge{
+        @apply flex items-center justify-center text-xs font-semibold py-1 w-[60px] px-1.5 rounded-full
+      }
+    
+    .succes{
+        @apply bg-positiveBackground text-positiveText
+    }
+
+    .error{
+        @apply bg-dangerBackground text-dangerText
+    }
+
+    .default-badge{
+        @apply bg-defaultIconBackground rounded-full p-1 flex items-center justify-center w-8 h-8
+    }
+    
+    
+      
     
 }  
