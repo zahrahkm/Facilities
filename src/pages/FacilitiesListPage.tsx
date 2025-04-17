@@ -42,7 +42,7 @@ export const FacilitiesListPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-[10px] py-4">
+    <div className="flex flex-col gap-[10px]">
       <div className="flex justify-end items-center mb-1">
         <Button onClick={handleCreate}>Create Facility</Button>
       </div>
