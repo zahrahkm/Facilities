@@ -1,0 +1,5 @@
+@layer utilities {
+    .text-body-strong {
+    @apply font-semibold text-base leading-normal ;
+    }
+}
