@@ -14,6 +14,9 @@ export default {
         secondary:'#F5F5F5',
         secondaryHover:'#E0E0E0',
         positiveBackground:'#EBFFEE',
+        borderDisabledDefault:'#B3B3B3',
+        borderDefault:'#9CA3AF',
+        dangerText:'#EC221F',
       }
     },
     fontFamily: {

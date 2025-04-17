@@ -1,15 +1,35 @@
 @layer utilities {
+    /* header */
     .header-bar {
       @apply bg-navbarBackground text-white h-14 flex items-center;
     }
     .mobile-header-bar{
         @apply bg-navbarBackground fixed inset-y-0 right-0 w-64 p-6 z-50 shadow-lg flex flex-col gap-4
     }
+
+    /* global */
     .btn-disabled{
         @apply cursor-not-allowed text-textDefaultSecondary;
     }
-   
     .overlay {
         @apply fixed inset-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-40;
     }
+
+    /* form */
+    .input-base {
+        @apply flex items-center px-2.5 gap-2 border border-borderDisabledDefault rounded-md text-form-value w-full;
+    }
+    .checkbox{
+        @apply flex flex-col justify-center items-center p-0 w-5 h-5 border-borderDefault rounded-md flex-none disabled:cursor-not-allowed cursor-pointer;
+    } 
+    .textarea{
+        @apply flex items-center p-2 pb-0 gap-2 text-form-value border align-middle border-borderDisabledDefault rounded-md flex-none order-1 self-stretch w-full
+    }
+    .form-container{
+        @apply flex flex-col mx-auto md:px-4 gap-4 max-w-[1200px] self-stretch
+    }
+    .form-card{
+        @apply bg-white p-4 rounded-lg shadow-sm w-full gap-3 flex flex-col
+    }
+    
 }  

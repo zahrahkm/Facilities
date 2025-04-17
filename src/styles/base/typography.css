@@ -6,4 +6,16 @@
     .text-neutral{
         @apply font-semibold font-inter text-sm ;
     }
+
+    .text-form-value{
+        @apply font-medium font-inter text-xs leading-4;
+    }
+    
+    .text-form-label{
+       @apply font-medium text-xs leading-4 
+    }
+
+    .text-header{
+        @apply font-semibold text-2xl leading-normal ;
+    }
 }
