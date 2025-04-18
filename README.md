@@ -8,7 +8,7 @@ This project is a minimal, scalable React + TypeScript application built with **
 
 ## ⚙️ Tech Stack
 
-- ✅ **React 18**
+- ✅ **React 19**
 - ✅ **TypeScript**
 - ✅ **Vite**
 - ✅ **Tailwind CSS**
@@ -26,3 +26,4 @@ git clone https://github.com/zahrahkm/Facilities
 cd Facilities
 npm install
 npm run dev
+
