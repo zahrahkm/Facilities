@@ -52,7 +52,11 @@
         @apply bg-defaultIconBackground rounded-full p-1 flex items-center justify-center w-8 h-8
     }
     
-    
-      
-    
+    /* Dialog */
+    .dialog-container{
+        @apply fixed inset-0 z-50 flex items-center justify-center p-4
+    }
+    .dialog-card{
+        @apply relative z-50 w-[414px] h-[198px] transform overflow-hidden rounded-lg bg-white text-left shadow-xl
+    }
 }  

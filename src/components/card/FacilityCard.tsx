@@ -17,7 +17,7 @@ export const FacilityCard = ({ facility, onEdit, onDelete }: Props) => {
   const isOpen = isFacilityOpen(facility.openingTime, facility.closingTime);
 
   return (
-    <Card>
+    <Card ariaLabel={facility.name}>
       <CardImage imageUrl={facility.imageUrl} alt={facility.name} isDefault={facility.isDefault} />
       
       <div className="flex items-start justify-between">
