@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
-import { useFacilityStore } from "../store/facilityStore";
 import { Facility } from "../types/facility";
 import { FacilityDeleteDialog } from "../components/FacilityDeleteDialog";
 import { EmptyStateCard } from "../components/card/EmptyStateCard";
 import { FacilityGrid } from "../components/FacilityGrid";
 import { useDialog } from "../hooks/useDialog"; 
 import { getCreatePageUrl, getEditPageUrl } from "../utiles";
+import { useFacilityStore } from "../store/facilityStore";
 
 export const FacilitiesListPage = () => {
   const { facilities, deleteFacility } = useFacilityStore();
   const navigate = useNavigate();
-
+  console.log('facility list')
   const {
     isOpen: isDialogOpen,
     data: selectedFacility,

@@ -3,8 +3,9 @@ import { CardImage } from "./CardImage";
 import { CardAddress } from "./CardAddress";
 import { CardActions } from "./CardActions";
 import { Facility } from "../../types/facility";
-import { isFacilityOpen } from "../../utiles/time";
+import { getNextStatusChangeTime, isFacilityOpen } from "../../utiles/time";
 import { Badge } from "../Badge";
+import { useEffect, useState } from "react";
 
 
 type Props = {
@@ -14,7 +15,30 @@ type Props = {
 };
 
 export const FacilityCard = ({ facility, onEdit, onDelete }: Props) => {
-  const isOpen = isFacilityOpen(facility.openingTime, facility.closingTime);
+  const [isOpen, setIsOpen] = useState(() => 
+    isFacilityOpen(facility.openingTime, facility.closingTime)
+  );
+  console.log(facility.name)
+
+  useEffect(() => {
+    function scheduleNextStatusUpdate() {
+      // Update the current open/closed status
+      setIsOpen(isFacilityOpen(facility.openingTime, facility.closingTime));
+
+      // Find when the next status change will happen
+      const nextChange = getNextStatusChangeTime(facility.openingTime, facility.closingTime);
+      const delay = nextChange.getTime() - Date.now();
+
+      // Schedule a re-check at that time
+      const timeoutId = setTimeout(scheduleNextStatusUpdate, delay);
+      return timeoutId;
+    }
+
+    const id = scheduleNextStatusUpdate();
+
+    return () => clearTimeout(id); // Clean up when the component is removed
+  }, [facility.openingTime, facility.closingTime]);
+
 
   return (
     <Card ariaLabel={facility.name}>
