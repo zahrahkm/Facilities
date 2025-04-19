@@ -8,7 +8,7 @@ import { InputField } from './InputField';
 import { BodyStrongText } from '../BodyStrongText';
 import { TextAreaField } from './TextAreaField';
 import { useNavigate } from 'react-router-dom';
-import { handleTimeInput } from '../../utiles/time';
+import TimeInput from './TimeInputField';
 
 
 const timeSchema = z.string().regex(
@@ -48,7 +48,7 @@ export const FacilityForm = ({
       isDefault: isFirstFacility,
     },
   });
-  
+
 
 
   return (
@@ -96,21 +96,17 @@ export const FacilityForm = ({
             <div className='py-2 mb-4'>
                 <BodyStrongText>Working Hours</BodyStrongText>
                 <div className="grid grid-cols-2 gap-[10px] md:w-[384px]">
-                    <InputField
-                        label="Opening Time *"
-                        pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$"
-                        registration={register('openingTime')}
-                        className=' h-6 md:h-8'
-                        onInput={handleTimeInput}
-                        error={errors.openingTime}
+                    <TimeInput
+                      label="Opening Time *"
+                      registration={register('openingTime')}
+                      defaultValue={initialData?.openingTime}
+                      error={errors.openingTime}
                     />
-                    <InputField
-                        label="Closing Time *"
-                        pattern="^([01][0-9]|2[0-3]):[0-5][0-9]$"
-                        registration={register('closingTime')}
-                        className=' h-6 md:h-8'
-                        onInput={handleTimeInput}
-                        error={errors.closingTime}
+                    <TimeInput
+                      label="Closing Time *"
+                      registration={register('closingTime')}
+                      defaultValue={initialData?.closingTime}
+                      error={errors.closingTime}
                     />
                 </div>
             </div>
