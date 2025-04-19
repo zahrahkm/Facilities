@@ -23,13 +23,15 @@ export default function TimeInput({ label, registration, defaultValue,error }: T
   }, [defaultValue]);
 
   const handleTimeChange = (date: Date | null) => {
-    const timeString = date ? date.toTimeString().slice(0, 5) : '';
-    setTime(timeString);
+    const hours = date?.getHours()?.toString().padStart(2, '0');
+    const minutes = date?.getMinutes()?.toString().padStart(2, '0');
+    const formatted = `${hours}:${minutes}`;
+    setTime(formatted);
 
     registration.onChange({
       target: {
         name: registration.name,
-        value: timeString,
+        value: formatted,
       },
     });
   };
@@ -44,6 +46,7 @@ export default function TimeInput({ label, registration, defaultValue,error }: T
         showTimeSelectOnly
         timeIntervals={15}
         timeCaption="Time"
+        timeFormat="HH:mm"
         dateFormat="HH:mm"
         className="h-6 md:h-8 input-base"
       />
