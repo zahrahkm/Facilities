@@ -42,7 +42,7 @@ export default function TimeInput({ label, registration, defaultValue,error }: T
         onChange={handleTimeChange}
         showTimeSelect
         showTimeSelectOnly
-        timeIntervals={5}
+        timeIntervals={15}
         timeCaption="Time"
         dateFormat="HH:mm"
         className="h-6 md:h-8 input-base"
